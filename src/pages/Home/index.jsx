@@ -13,20 +13,23 @@ const Home = () => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
 
+    let defaultDate = new Date("2024-01-24 17:00:00").getTime();
+    let now = new Date().getTime();
+    let diff = defaultDate - now;
+
     useEffect(() => {
-        let defaultDate = new Date("2024-01-24 17:00:00").getTime();
-        let now = new Date().getTime();
-        let diff = defaultDate - now;
-        
-        setDays(Math.floor(diff / (1000 * 60 * 60 * 24)));
-        setHours(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-        setMinutes(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)));
-        setSeconds(Math.floor((diff % (1000 * 60)) / 1000));
-        
-        console.log(defaultDate, "<<Default date");
-        console.log(now, "<<Date now");
-        console.log(days, "<<days");
-    },[]);
+        if(seconds < 0){
+            return;
+        }
+        const timer = setInterval(()=>{
+            setDays(Math.floor(diff / (1000 * 60 * 60 * 24)));
+            setHours(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            setMinutes(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)));
+            setSeconds(Math.floor((diff % (1000 * 60)) / 1000));
+            
+        }, 1000);
+        return () => clearInterval(timer);
+    },[seconds]);
 
     return(
         <div className="main">
