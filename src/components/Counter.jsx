@@ -1,4 +1,4 @@
-const Counter = (time) => {
+const Counter = ({time}) => {
 
     const { days, hours, minutes, seconds } = time;
 
@@ -7,7 +7,7 @@ const Counter = (time) => {
           <div className="box">
             <div className="box-cont">
               <h2 className="num days">
-                {days < 9 ? `0${days}` : days ? days : "00"}
+                {days <= 9 ? `0${days}` : days ? days : "00"}
               </h2>
               <span className="overlay-box left"></span>
               <span className="overlay-box right"></span>
