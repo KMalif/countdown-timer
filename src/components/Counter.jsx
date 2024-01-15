@@ -18,7 +18,7 @@ const Counter = ({time}) => {
           <div className="box">
             <div className="box-cont">
               <h2 className="num days">
-                {hours < 9 ? `0${hours}` : hours ? hours : "00"}
+                {hours <= 9 ? `0${hours}` : hours ? hours : "00"}
               </h2>
               <span className="overlay-box left"></span>
               <span className="overlay-box right"></span>
@@ -29,7 +29,7 @@ const Counter = ({time}) => {
           <div className="box">
             <div className="box-cont">
               <h2 className="num days">
-                {minutes < 9 ? `0${minutes}` : minutes ? minutes : "00"}
+                {minutes <= 9 ? `0${minutes}` : minutes ? minutes : "00"}
               </h2>
               <span className="overlay-box left"></span>
               <span className="overlay-box right"></span>
@@ -40,7 +40,7 @@ const Counter = ({time}) => {
           <div className="box">
             <div className="box-cont">
               <h2 className="num days">
-                {seconds < 9 ? `0${seconds}` : seconds ? seconds : "00"}
+                {seconds <= 9 ? `0${seconds}` : seconds ? seconds : "00"}
               </h2>
               <span className="overlay-box left"></span>
               <span className="overlay-box right"></span>

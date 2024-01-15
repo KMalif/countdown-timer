@@ -35,7 +35,7 @@ const Home = () => {
         <div className="main">
             <div className="container">
                 <div className="count-items">
-                <h1 className="count-title">WE ARE LAUNCHING SOON</h1>
+                <h1 className="count-title">WE`RE LAUNCHING SOON</h1>
                 <Counter time={{days, hours, minutes, seconds}}/>
                 </div>
             </div>
