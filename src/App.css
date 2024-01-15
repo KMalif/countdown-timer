@@ -140,8 +140,8 @@ footer {
   color: var(--Soft-red);
 }
 
-@media screen and (min-width: 120em) {
+@media screen and (max-width: 576px) {
   .main {
-    font-size: 1em;
+    font-size: 0.5em;
   }
 }
